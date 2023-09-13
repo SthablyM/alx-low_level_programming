@@ -19,8 +19,8 @@ void times_table(void)
 			else
 			{
 				printf("%2d", result);
-				if (l != 0)
-					printf(",");
+				if (l != 9)
+					printf(" , ");
 			}
 		}
 		printf("\n");
