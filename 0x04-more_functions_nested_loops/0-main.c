@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - check the code.
+ *_isupper - check the code.
  *
- * Return: Always 0.
+ * Return: 1 or 0.
  */
 int main(void)
 {
