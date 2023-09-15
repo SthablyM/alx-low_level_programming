@@ -14,8 +14,8 @@ int main(void)
 		else if (i % 5 == 0)
 			printf("Buzz ");
 		else
-			printf("%d ", i);	
+			printf("%d ", i);
 	}
-	_puchar('\n');
+	printf("\n");
 	return (0);
 }
