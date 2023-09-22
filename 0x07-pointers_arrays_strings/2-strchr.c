@@ -3,7 +3,7 @@
  **_strchr -  function that locates a character in a string
  *@s: parameter to be checked
  *@c: paramete to be checked
- *Return: c or NULL
+ *Return: s or NULL
  */
 char *_strchr(char *s, char c)
 {
