@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - function that prints a name 
+ * main - function that prints a name
  * @agrc: number of commands line
  * @argv: arrays that contain commands line
  * Return: 0 when successful
