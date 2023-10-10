@@ -19,4 +19,5 @@ struct dog
  *dog_t - tiypedef for struct dog
  */
 typedef struct dog dog_t;
-#endif
+void init_dog(struct dog *d, char *name, float age, char *owner);
+#endif 
