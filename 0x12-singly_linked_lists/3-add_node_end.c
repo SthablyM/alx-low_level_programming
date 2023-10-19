@@ -41,20 +41,3 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	return (new_node);
 }
-/**
- *free_list - function to freee the list
- *@head: to be checked
- *Return: the address
- */
-void free_list(list_t *head)
-{
-	list_t *current;
-
-	while (head != NULL)
-	{
-		current = head;
-		head = head->next;
-		free(current->str);
-		free(current);
-	}
-}
