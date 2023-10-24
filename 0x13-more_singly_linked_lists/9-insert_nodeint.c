@@ -10,13 +10,11 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node, *tmp, *prev;
+	listint_t *new_node, *tmp;
 	unsigned int i = 0;
 
-	if (head == NULL)
-		return (NULL);
 	new_node = malloc(sizeof(listint_t));
-	if (new_node == NULL)
+	if (!new_node || !head)
 		return (NULL);
 	new_node->n = n;
 	new_node->next = NULL;
@@ -27,34 +25,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (new_node);
 	}
 	tmp = *head;
-	while (tmp != NULL && i > idx)
-	{
-		prev = tmp;
-		tmp = tmp->next;
+	while (tmp && i < idx)
 		i++;
-	}
-	if (i != idx)
 	{
-		free(new_node);
-		return (NULL);
-	}
-	prev->next = new_node;
-	new_node = tmp;
-	return (new_node);
-}
-/**
- *print_list - function that insert a given position
- *@head: pointer
- *Return: void
- */
-void print_list(listint_t *head)
-{
-	listint_t *current = head;
-
-	while (current != NULL)
+	if (i == idx - 1)
 	{
-		printf("%d", current->n);
-		current = current->next;
+		new_node->next = tmp->next;
+		tmp->next = new_node;
+		return (new_node);
 	}
-	printf("\n");
+	tmp = tmp->next;
+	}
+	return (NULL);
 }
