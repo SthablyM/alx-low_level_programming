@@ -12,16 +12,16 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename)
 	{
-		return (0);
+		return (-1);
 	}
-	file_dsp = open(filename, O_RDONLY);
+	file_dsp = open(filename, O_WRONLY | O_APPEND);
 	if (file_dsp == -1)
 	{
-		return (0);
+		return (-1);
 	}
-	if (text_content == NULL)
+	if (text_content)
 	{
-		bytes_written = write(file_dsp, text_content, 
+		bytes_written = write(file_dsp, text_content,
 				strlen(text_content));
 		if (bytes_written == -1)
 		{
