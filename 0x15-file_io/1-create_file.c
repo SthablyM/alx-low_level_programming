@@ -1,8 +1,4 @@
 #include "main.h"
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
 /**
  *create_file - function that creates a file
  *@filename: to be checked
@@ -18,8 +14,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	file_dsp = open(filename, O_WRONLY | O_CREAT | O_TRUNC,  S_IRUSR
-			| S_IWUSR);
+	file_dsp = open(filename, O_RDONLY);
 	if (file_dsp == -1)
 	{
 		return (-1);
