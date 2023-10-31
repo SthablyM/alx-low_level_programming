@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 		if (nchars == -1)
 			error_file(-1, 0, argv);
 		bytes_read = write(file_to, buffer, nchars);
-		if (bytes_read== -1)
+		if (bytes_read == -1)
 			error_file(0, -1, argv);
 	}
 
