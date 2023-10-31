@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
 	print_usage(file_from, file_to, argv);
+
 	j = 1024;
 	while (j == 1024)
 	{
@@ -54,6 +55,7 @@ int main(int argc, char *argv[])
 		if (bytes_read == -1)
 			print_usage(0, -1, argv);
 	}
+
 	error_close = close(file_from);
 	if (error_close == -1)
 	{
@@ -61,6 +63,7 @@ int main(int argc, char *argv[])
 					, file_from);
 		exit(100);
 	}
+
 	error_close = close(file_to);
 	if (error_close == -1)
 	{
