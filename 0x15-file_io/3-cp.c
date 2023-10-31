@@ -12,7 +12,7 @@ void error_file(int file_from, int file_to, char *argv[])
 	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: can't read from file %s\n",
-				argv[1])
+				argv[1]);
 			exit(98);
 	}
 	if (file_to == -1)
@@ -29,9 +29,7 @@ void error_file(int file_from, int file_to, char *argv[])
  */
 int main(int argc, char *argv[])
 {
-	int file_from;
-	int file_to;
-	int error_close;
+	int file_from, file_to, error_close;
 	char buffer[1024];
 	ssize_t nchars, bytes_read;
 
@@ -50,7 +48,7 @@ int main(int argc, char *argv[])
 		if (nchars == -1)
 			error_file(-1, 0, argv);
 		bytes_read = write(file_to, buffer, nchars);
-		if (bytes_read == -1)
+		if (bytes_read== -1)
 			error_file(0, -1, argv);
 	}
 
