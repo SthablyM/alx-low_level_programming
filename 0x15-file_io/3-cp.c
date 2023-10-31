@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
 	error_file(file_from, file_to, argv);
+
 	nchars = 1024;
 	while (nchars == 1024)
 	{
