@@ -80,9 +80,11 @@ int main(int argc, char *argv[])
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
 	}
 
-	while
-		(bytes_read > 0);
+	while (bytes_read > 0);
+
 	free(buffer);
+	close_file(file_from);
+	close_file(file_to);
 
 	return (0);
 }
