@@ -67,5 +67,7 @@ int main(int argc, char *argv[])
 				file_to);
 		exit(100);
 	}
+	close(file_from);
+	close(file_to);
 	return (0);
 }
