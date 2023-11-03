@@ -83,8 +83,6 @@ int main(int argc, char *argv[])
 	while
 		(bytes_read > 0);
 	free(buffer);
-	close_file(file_from);
-	close_file(file_to);
 
 	return (0);
 }
