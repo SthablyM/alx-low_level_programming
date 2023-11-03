@@ -26,6 +26,10 @@ void error_file(int file_from, int file_to, char *argv[])
  *@argc: arguments
  *@argv: argument value
  *Return: 0 if sucess
+ *Description: if the argument count is incorrect - exit code 97.
+ *if file_from does not exist or cannot be read - exit code 98.
+ *if fil_to cannot be created or written to - exit code 99.
+ *if file_to or file_from cannot be closed - exit code 100.
  */
 int main(int argc, char *argv[])
 {
@@ -67,7 +71,5 @@ int main(int argc, char *argv[])
 				file_to);
 		exit(100);
 	}
-	close(file_from);
-	close(file_to);
 	return (0);
 }
